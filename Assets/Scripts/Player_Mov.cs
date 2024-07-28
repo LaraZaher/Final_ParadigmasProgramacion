@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Mov : MonoBehaviour
+public class Player_Mov : GameBase
 {
     public float moveSpeed = 5f;
 
@@ -11,6 +11,13 @@ public class Player_Mov : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Initialize();
+    }
+
+    public override void Initialize()
+    {
+        
+        moveSpeed = 5f;
     }
 
 
@@ -19,7 +26,7 @@ public class Player_Mov : MonoBehaviour
         float moveInputX = Input.GetAxis("Horizontal");
 
         float moveInputY = Input.GetAxis("Vertical");
-        rb.velocity = new Vector2(moveInputX * moveSpeed, moveInputY * moveSpeed);
+        Move(new Vector2(moveInputX, moveInputY), moveSpeed);
     }
 
 
