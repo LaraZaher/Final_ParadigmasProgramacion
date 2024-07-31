@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_Mov : GameBase
 {
     public float moveSpeed = 5f;
+    public Weapon weapon;
 
     private Rigidbody2D rb;
 
@@ -27,7 +28,12 @@ public class Player_Mov : GameBase
 
         float moveInputY = Input.GetAxis("Vertical");
         Move(new Vector2(moveInputX, moveInputY), moveSpeed);
-    }
 
+
+        if (Input.GetKeyDown(KeyCode.Space) && weapon != null)
+        {
+            weapon.Fire();
+        }
+    }
 
 }

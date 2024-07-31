@@ -228,6 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 477890439}
   - component: {fileID: 477890440}
+  - component: {fileID: 477890441}
   m_Layer: 0
   m_Name: pistol1
   m_TagString: Untagged
@@ -247,7 +248,8 @@ Transform:
   m_LocalPosition: {x: 0.11859956, y: -0.018492972, z: 0.03163674}
   m_LocalScale: {x: 0.8188108, y: 0.8188108, z: 0.8188108}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2140450941}
   m_Father: {fileID: 1996437534}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &477890440
@@ -302,6 +304,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &477890441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477890438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370e57d3c8793b740a3939f1c2d4540c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 8338088184119551300, guid: cadf600bd6553f34491c2495d21fb0e0, type: 3}
+  firePoint: {fileID: 2140450941}
+  projectileSpeed: 10
+  fireRate: 0.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  weapon: {fileID: 477890441}
 --- !u!50 &1996437532
 Rigidbody2D:
   serializedVersion: 4
@@ -1073,6 +1092,37 @@ Transform:
   m_Children:
   - {fileID: 187262349}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2140450940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2140450941}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2140450941
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140450940}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0493404, y: 0.00060206, z: -0.0031816007}
+  m_LocalScale: {x: 0.18665421, y: 0.18665421, z: 0.18665421}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 477890439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
