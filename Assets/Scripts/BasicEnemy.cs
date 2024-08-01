@@ -2,34 +2,53 @@ using UnityEngine;
 
 public class BasicEnemy : MonoBehaviour
 {
+    public Transform player; 
     public float moveSpeed = 2f;
-    public int health = 20;
-    public int damage = 10;
+    public float health = 10f;
+    public float knockbackForce = 5f;
+    private Rigidbody2D rb;
 
-    private Transform player;
-
-    void Start()
+    private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+        rb = GetComponent<Rigidbody2D>();
 
-    void Update()
-    {
-        if (player != null)
+        if (player == null)
         {
-            
-            Vector2 direction = (player.position - transform.position).normalized;
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            player = GameObject.FindWithTag("Player").transform;
         }
     }
 
-    public void TakeDamage(int damageAmount)
+    private void FixedUpdate()
     {
-        health -= damageAmount;
+        
+        Vector2 direction = (player.position - transform.position).normalized;
+        
+        rb.velocity = direction * moveSpeed;
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            TakeDamage(1f);
+            Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
+            rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
-    }   
-    
+    }
+
+    void Die()
+    {
+        
+        Destroy(gameObject);
+    }
 }
