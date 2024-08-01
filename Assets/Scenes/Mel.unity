@@ -218,6 +218,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &314836708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 314836709}
+  m_Layer: 0
+  m_Name: Floor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &314836709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314836708}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7722706, y: -2.25426, z: -0.019967858}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &477890438
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 370e57d3c8793b740a3939f1c2d4540c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8338088184119551300, guid: cadf600bd6553f34491c2495d21fb0e0, type: 3}
+  projectilePrefab: {fileID: 2723102702588987387, guid: cadf600bd6553f34491c2495d21fb0e0, type: 3}
   firePoint: {fileID: 2140450941}
   projectileSpeed: 10
   fireRate: 0.5
@@ -1134,3 +1165,4 @@ SceneRoots:
   - {fileID: 1247126586}
   - {fileID: 1075511993}
   - {fileID: 1711657817}
+  - {fileID: 314836709}
