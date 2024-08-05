@@ -13,13 +13,11 @@ public class Projectile : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
-            Destroy(gameObject);
+            
         }
         if (intermediateEnemy != null)
         {
             intermediateEnemy.TakeDamage(damage);
-            Destroy(gameObject);
-
 
         }
     }
