@@ -9,7 +9,7 @@ public class EnemySpawn : MonoBehaviour
     public GameObject bossEnemyPrefab;
 
     public Transform[] spawnPoints; 
-    public float spawnInterval = 5f; 
+    public float spawnInterval = 2f; 
 
     private void Start()
     {

@@ -12,9 +12,16 @@ public class Enemy : MonoBehaviour
 
     protected Transform player;
 
+    private Player_Mov Playerscript;
+
     protected virtual void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindWithTag("Player").transform;
+
+        if (player != null)
+        {
+            Playerscript = player.GetComponent<Player_Mov>();
+        }
     }
 
     protected virtual void Update()
@@ -25,6 +32,8 @@ public class Enemy : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
     }
+
+
 
     public virtual void TakeDamage(int damageAmount)
     {
@@ -41,6 +50,17 @@ public class Enemy : MonoBehaviour
         Debug.Log($"{gameObject.name} died.");
         Destroy(gameObject);
     }
+
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        Player_Mov player = collision.GetComponent<Player_Mov>();
+        if (player != null)
+        {
+            player.TakeDamage(damage);
+            Die(); 
+        }
+    }
+
 }
 
 

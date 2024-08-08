@@ -6,6 +6,7 @@ public class Player_Mov : GameBase
 {
     public float moveSpeed = 5f;
     public Weapon weapon;
+    public float health = 10f;
 
     private Rigidbody2D rb;
 
@@ -20,7 +21,21 @@ public class Player_Mov : GameBase
         
         moveSpeed = 5f;
     }
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
 
+    void Die()
+    {
+        
+        Debug.Log("murio :p");
+        Destroy(gameObject); 
+    }
 
     private void Update()
     {
