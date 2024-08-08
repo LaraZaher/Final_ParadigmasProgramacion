@@ -10,17 +10,13 @@ public class Bullet : MonoBehaviour
     {
         Enemy enemy = collision.GetComponent<Enemy>();
         
-        IntermediateEnemy intermediateEnemy = collision.GetComponent<IntermediateEnemy>();
+      
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
             Destroy(gameObject);
         }
-        if (intermediateEnemy != null)
-        {
-            intermediateEnemy.TakeDamage(damage);
-
-        }
+        
 
     }
 }

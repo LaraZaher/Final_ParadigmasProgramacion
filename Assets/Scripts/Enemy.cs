@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class Enemy : MonoBehaviour
 {
     protected float moveSpeed;
@@ -33,8 +31,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
-
     public virtual void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
@@ -47,7 +43,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Die()
     {
-        Debug.Log($"{gameObject.name} died.");
+        Debug.Log($"{gameObject.name} murio.");
         Destroy(gameObject);
     }
 

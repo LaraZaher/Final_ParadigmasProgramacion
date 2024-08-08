@@ -18,7 +18,7 @@ public class Weapon : MonoBehaviour
         if (Time.time > nextFireTime)
         {
 
-            Debug.Log("Disparando proyectil");
+            Debug.Log("Disparando");
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             if (rb != null)
