@@ -10,8 +10,14 @@ public class Player_Mov : GameBase
 
     private Rigidbody2D rb;
 
+    //variables para las animaciones
+    private float moveInputX;
+    private float moveInputY;
+    private Animator animator;
+
     private void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         Initialize();
     }
@@ -39,9 +45,17 @@ public class Player_Mov : GameBase
 
     private void Update()
     {
-        float moveInputX = Input.GetAxis("Horizontal");
+        moveInputX = Input.GetAxisRaw("Horizontal");
+        moveInputY = Input.GetAxisRaw("Vertical");
 
-        float moveInputY = Input.GetAxis("Vertical");
+        animator.SetFloat("MovimientoX", moveInputX);
+        animator.SetFloat("MovimientoY", moveInputY);
+
+        if(moveInputX != 0 || moveInputY != 0)
+        {
+            animator.SetFloat("UltimoX", moveInputX);
+            animator.SetFloat("UltimoY", moveInputY);
+        }
         Move(new Vector2(moveInputX, moveInputY), moveSpeed);
 
 
