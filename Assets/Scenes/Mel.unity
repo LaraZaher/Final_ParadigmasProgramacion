@@ -19802,13 +19802,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemyPrefab: {fileID: 8341901656233612430, guid: 67dd4ff2210ef5549ba7928518e1762c, type: 3}
   intermediateEnemyPrefab: {fileID: 6828616330029910144, guid: d14880c14672f6a4b99ad097ac44142f, type: 3}
-  bossEnemyPrefab: {fileID: 0}
   spawnPoints:
   - {fileID: 1350621742}
   - {fileID: 150311424}
   timeBetweenWaves: 5
   numberOfWaves: 5
-  enemiesPerWave: 5
+  enemiesPerWave: 10
 --- !u!4 &1569840785
 Transform:
   m_ObjectHideFlags: 0

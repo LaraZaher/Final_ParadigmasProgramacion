@@ -6,7 +6,7 @@ public class EnemySpawn : MonoBehaviour
 {
     public GameObject basicEnemyPrefab;
     public GameObject intermediateEnemyPrefab;
-    public GameObject bossEnemyPrefab;
+    
 
     public Transform[] spawnPoints;
     public float timeBetweenWaves = 5f; 
@@ -15,7 +15,7 @@ public class EnemySpawn : MonoBehaviour
     public int numberOfWaves = 5; 
     private int currentWave = 0;
 
-    public int enemiesPerWave = 5; 
+    public int enemiesPerWave = 10; 
     private int enemiesSpawned = 0;
 
     private void Update()
@@ -61,9 +61,7 @@ public class EnemySpawn : MonoBehaviour
             case 1:
                 enemyPrefab = intermediateEnemyPrefab;
                 break;
-            case 2:
-                enemyPrefab = bossEnemyPrefab;
-                break;
+            
         }
 
         if (enemyPrefab != null)
